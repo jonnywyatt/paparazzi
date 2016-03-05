@@ -5,15 +5,19 @@ For taking shots of pairs of UI components and visually diffing them, to check f
 ## Setup
 
 Mac OSX:
-- brew install cairo
-- brew install pkg-config
-- npm install
+```
+brew install cairo
+brew install pkg-config
+npm install
+```
 
 ## Adding components
 In config.json, add an object for each new component. 'className' must match the component's CSS class.
 
 ## Running
-- node start
+```
+node start
+```
 
 Passes and fails will be output to the command line.
 
