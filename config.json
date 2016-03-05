@@ -1,0 +1,24 @@
+{
+  "sites": [
+    {
+      "siteLabel": "local",
+      "url": "http://local.tescloud.com:5000/styleguide"
+    },
+    {
+      "siteLabel": "live",
+      "url": "http://www.tes.com/styleguide"
+    }
+  ],
+  "components": [
+    {
+      "label": "Header / Logo",
+      "className": "header-logo"
+    },
+    {
+      "label": "Social share icons",
+      "className": "social-share"
+    }
+  ],
+  "width": 1024,
+  "height": 300
+}

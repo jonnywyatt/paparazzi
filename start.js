@@ -1,5 +1,6 @@
 'use strict';
 
+const config = require('./config.json');
 const webshot = require('webshot');
 const fs = require('fs');
 const resemble = require('node-resemble-js');
@@ -8,11 +9,11 @@ const takeShot = (shotConfig) => {
   return new Promise((resolve, reject) => {
     webshot(shotConfig.url, shotConfig.outputPath, {
       windowSize: {
-        width: width,
-        height: height
+        width: config.width,
+        height: config.height
       },
       shotSize: {
-        width: width,
+        width: config.width,
         height: 'all'
       },
       defaultWhiteBackground: false,
@@ -41,37 +42,14 @@ const comparePair = (pairOfShots) => {
   });
 };
 
-const sites = [
-  {
-    siteLabel: 'local',
-    url: 'http://local.tescloud.com:5000/styleguide'
-  },
-  {
-    siteLabel: 'live',
-    url: 'http://www.tes.com/styleguide'
-  }
-];
-const components = [
-  {
-    label: 'Header / Logo',
-    className: 'header-logo'
-  },
-  {
-    label: 'Social share icons',
-    className: 'social-share'
-  }
-
-];
-const width = 1024;
-const height = 300;
 const browser = 'slimerjs';
 
 let promisesShots = [];
 let shots = [];
 
-components.forEach((component) => {
+config.components.forEach((component) => {
   let pairOfShots = {};
-  sites.forEach((site) => {
+  config.sites.forEach((site) => {
     let shotConfig = Object.assign({}, site, component);
     shotConfig.outputPath = './shots/' + shotConfig.className + '/' + shotConfig.siteLabel + '.png';
     pairOfShots[shotConfig.siteLabel] = shotConfig;

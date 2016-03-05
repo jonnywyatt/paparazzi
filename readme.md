@@ -9,6 +9,9 @@ Mac OSX:
 - brew install pkg-config
 - npm install
 
+## Adding components
+In config.json, add an object for each new component. 'className' must match the component's CSS class.
+
 ## Running
 - node start
 
