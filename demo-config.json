@@ -1,14 +1,12 @@
 {
-  "sites": [
-    {
-      "siteLabel": "local",
-      "url": "http://local.tescloud.com:5000/styleguide"
-    },
-    {
-      "siteLabel": "live",
-      "url": "http://www.tes.com/styleguide"
-    }
-  ],
+  "site1": {
+    "siteLabel": "local",
+    "url": "http://local.tescloud.com:5000/styleguide"
+  },
+  "site2": {
+    "siteLabel": "live",
+    "url": "http://www.tes.com/styleguide"
+  },
   "components": [
     {
       "label": "Header / Logo",
