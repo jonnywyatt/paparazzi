@@ -71,9 +71,13 @@ const run = (config) => {
     });
 };
 
-try {
-  const config = JSON.parse(fs.readFileSync(path.join(__dirname, process.argv[2]), {encoding: 'utf8'}));
-  run(config);
-} catch(err) {
-  console.log('Error: ' + err);
+module.exports = run;
+
+if (process.argv && process.argv.length >= 3) {
+  try {
+    const config = JSON.parse(fs.readFileSync(path.join(__dirname, process.argv[2]), {encoding: 'utf8'}));
+    run(config);
+  } catch (err) {
+    console.log('Error: ' + err);
+  }
 }
