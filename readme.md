@@ -11,6 +11,14 @@ brew install pkg-config
 npm install
 ```
 
+Ubuntu:
+```
+apt-get install pkg-config
+apt-get install libcairo2-dev
+apt-get install libjpeg-dev
+
+```
+
 ## Adding components
 In config.json, add an object for each new component. 'className' must match the component's CSS class.
 
